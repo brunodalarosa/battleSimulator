@@ -1,5 +1,7 @@
 package BS;
 
+import BS.Loggers.SystemLogger;
+import BS.SkillTrees.SkillUtils;
 import GUI.GUIController;
 import javafx.application.Platform;
 import javafx.stage.Stage;
@@ -12,6 +14,9 @@ import javafx.stage.Stage;
 public class BS {
     private static BS instance_ = null;
     private Stage main_stage_;
+
+    private SystemLogger sysLog;
+    private SkillUtils skillUtils;
 
 
     /**
@@ -37,11 +42,22 @@ public class BS {
     }
 
     /**
-     * Inicializa os sistemas iniciais (GUI, BD, etc)
+     * Inicializa os sistemas iniciais (GUI, BD, Logger, etc)
      * @throws Exception Em caso de erro em alguma das partes
      */
     private void initSystems() throws Exception{
         GUIController.getInstance().guiInit(main_stage_);
+        this.sysLog = new SystemLogger();
+        this.skillUtils = new SkillUtils();
+    }
+
+
+    public SystemLogger getSysLog() {
+        return sysLog;
+    }
+
+    public SkillUtils getSkillUtils() {
+        return skillUtils;
     }
 
     /**
