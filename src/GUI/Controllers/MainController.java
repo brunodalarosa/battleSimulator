@@ -31,11 +31,13 @@ public class MainController implements BaseController {
     }
 
     public void characters(){
+        controller_.setVisibleScreen("characters");
 
     }
 
     public void weapons(){
-
+        //TODO trocar para abrir outra janela?
+        controller_.setVisibleScreen("weapons");
     }
 
     public void equipment(){
@@ -47,6 +49,7 @@ public class MainController implements BaseController {
     }
 
     public void bestiary(){
+        controller_.setVisibleScreen("bestiary");
 
     }
 

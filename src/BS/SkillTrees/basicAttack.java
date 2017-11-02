@@ -17,7 +17,7 @@ public class basicAttack extends Skill {
      */
     public basicAttack(Agent source, Agent target){
         super(source);
-        //TODO Encontrar uma boa formula de cálculo para ataque fisico e modificar esta função implementando ele.
+        //TODO Encontrar uma boa formula de cálculo para ataque fisico e modificar esta função implementando ela.
         boolean hit = BS.getInstance().getSkillUtils().hit(source.getAcc(),target.getEva());
 
         if(hit){

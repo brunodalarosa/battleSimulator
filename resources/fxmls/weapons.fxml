@@ -1,205 +1,273 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.image.*?>
-<?import javafx.scene.text.*?>
-<?import javafx.geometry.*?>
-<?import com.jfoenix.controls.*?>
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTreeTableView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<GridPane fx:id="main_pane_" maxHeight="1080.0" maxWidth="1920.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controllers.WeaponsController">
-   <columnConstraints>
-      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
-      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-   </columnConstraints>
-   <rowConstraints>
-      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-   </rowConstraints>
+<VBox xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controllers.WeaponsController">
    <children>
-      <GridPane fx:id="list_pane_">
-        <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-        </columnConstraints>
-        <rowConstraints>
-          <RowConstraints minHeight="10.0" percentHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" percentHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-        </rowConstraints>
+      <MenuBar VBox.vgrow="NEVER">
+        <menus>
+          <Menu mnemonicParsing="false" text="Battle">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Start battle" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Party">
+            <items>
+              <MenuItem mnemonicParsing="false" text="View parties" />
+                  <MenuItem mnemonicParsing="false" text="New party" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Mobs">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="View mobs" />
+                  <MenuItem mnemonicParsing="false" text="New mob" />
+               </items>
+            </Menu>
+          <Menu mnemonicParsing="false" text="Characters">
+            <items>
+              <MenuItem mnemonicParsing="false" text="View Characters" />
+                  <MenuItem mnemonicParsing="false" text="New Character" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Weapons">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="View Weapons" />
+                  <MenuItem mnemonicParsing="false" text="New Weapon" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Equipments">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="View equipments" />
+                  <MenuItem mnemonicParsing="false" text="New equipment" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Items">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="View items" />
+                  <MenuItem mnemonicParsing="false" text="New item" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Bestiary">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Open bestiary" />
+                  <MenuItem mnemonicParsing="false" text="New enemy" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="About" />
+               </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+      <GridPane fx:id="main_pane_" maxHeight="1080.0" maxWidth="1920.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" VBox.vgrow="ALWAYS">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
          <children>
-            <HBox alignment="CENTER">
+            <GridPane fx:id="list_pane_">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" percentHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" percentHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
                <children>
-                  <Label text="Classe:">
+                  <HBox alignment="CENTER">
+                     <children>
+                        <Label text="Classe:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <JFXComboBox fx:id="cbox_classes_" prefHeight="40.0" prefWidth="150.0" promptText="Selecione a classe">
+                           <HBox.margin>
+                              <Insets left="5.0" />
+                           </HBox.margin>
+                        </JFXComboBox>
+                        <JFXButton fx:id="btn_st_" buttonType="RAISED" onAction="#skillTree" style="-fx-background-color: coral;" text="Skill Tree" textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="200.0" />
+                           </HBox.margin>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+                  <JFXTreeTableView fx:id="ttview_list_" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
+                  </JFXTreeTableView>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                     <children>
+                        <JFXButton buttonType="RAISED" onAction="#delete" style="-fx-background-color: crimson;" text="Delete" HBox.hgrow="ALWAYS">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="25.0" right="25.0" />
+                           </HBox.margin>
+                        </JFXButton>
+                        <JFXButton buttonType="RAISED" onAction="#create" style="-fx-background-color: CORNFLOWERBLUE;" text="Create" HBox.hgrow="ALWAYS">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="25.0" right="25.0" />
+                           </HBox.margin>
+                        </JFXButton>
+                        <JFXButton buttonType="RAISED" onAction="#edit" style="-fx-background-color: lightgreen;" text="Edit" HBox.hgrow="ALWAYS">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="25.0" right="25.0" />
+                           </HBox.margin>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+               </children>
+            </GridPane>
+            <GridPane fx:id="detail_pane_" style="-fx-background-color: grey;" GridPane.columnIndex="1">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="25.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="25.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="25.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="25.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints percentHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints percentHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints percentHeight="10.0" vgrow="SOMETIMES" />
+                <RowConstraints percentHeight="5.0" vgrow="SOMETIMES" />
+                  <RowConstraints percentHeight="10.0" vgrow="SOMETIMES" />
+                <RowConstraints percentHeight="5.0" vgrow="SOMETIMES" />
+                  <RowConstraints percentHeight="25.0" vgrow="SOMETIMES" />
+                  <RowConstraints percentHeight="5.0" vgrow="SOMETIMES" />
+                  <RowConstraints percentHeight="20.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <ImageView fx:id="img_weapon_" fitHeight="200.0" fitWidth="200.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowSpan="3" GridPane.valignment="CENTER">
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
+                     <image>
+                        <Image url="@../icons/add_photo.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="lbl_name_" text="Name_example" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.halignment="CENTER">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin>
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbl_rarity_" text="Rarity_label" wrapText="true" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label fx:id="lbl_lvl_" text="LVL : X" GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label fx:id="lbl_durability_" text="Durabilty: X" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" text="Requisites" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin>
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label text="Atributes and Skills" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="5">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label text="Description" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="7">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbl_STR_" text="X STR" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <JFXComboBox fx:id="cbox_classes_" prefHeight="40.0" prefWidth="150.0" promptText="Selecione a classe">
-                     <HBox.margin>
-                        <Insets left="5.0" />
-                     </HBox.margin>
-                  </JFXComboBox>
-                  <JFXButton fx:id="btn_st_" buttonType="RAISED" onAction="#skillTree" style="-fx-background-color: coral;" text="Skill Tree" textAlignment="CENTER" wrapText="true">
+                  <Label fx:id="lbl_AGI_" text="X AGI" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
                      <font>
-                        <Font size="24.0" />
+                        <Font size="18.0" />
                      </font>
-                     <HBox.margin>
-                        <Insets left="200.0" />
-                     </HBox.margin>
-                  </JFXButton>
+                  </Label>
+                  <Label fx:id="lbl_INT_" text="X INT" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbl_WIS_" text="X WIS" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <JFXTextArea fx:id="txt_desc_" editable="false" promptText="Weapon description" style="-fx-border-color: snow;" wrapText="true" GridPane.columnSpan="2147483647" GridPane.rowIndex="8">
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXTextArea>
+                  <JFXTextArea fx:id="txt_atributes_" editable="false" promptText="Atributes and skills" style="-fx-border-color: black;" GridPane.columnSpan="2147483647" GridPane.rowIndex="6">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
+                  </JFXTextArea>
                </children>
-            </HBox>
-            <JFXTreeTableView fx:id="ttview_list_" GridPane.rowIndex="1">
-               <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-               </GridPane.margin>
-            </JFXTreeTableView>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
-               <children>
-                  <JFXButton buttonType="RAISED" onAction="#delete" style="-fx-background-color: crimson;" text="Delete" HBox.hgrow="ALWAYS">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets left="25.0" right="25.0" />
-                     </HBox.margin>
-                  </JFXButton>
-                  <JFXButton buttonType="RAISED" onAction="#create" style="-fx-background-color: CORNFLOWERBLUE;" text="Create" HBox.hgrow="ALWAYS">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets left="25.0" right="25.0" />
-                     </HBox.margin>
-                  </JFXButton>
-                  <JFXButton buttonType="RAISED" onAction="#edit" style="-fx-background-color: lightgreen;" text="Edit" HBox.hgrow="ALWAYS">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets left="25.0" right="25.0" />
-                     </HBox.margin>
-                  </JFXButton>
-               </children>
-            </HBox>
-         </children>
-      </GridPane>
-      <GridPane fx:id="detail_pane_" style="-fx-background-color: grey;" GridPane.columnIndex="1">
-        <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="25.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="25.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="25.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="25.0" prefWidth="100.0" />
-        </columnConstraints>
-        <rowConstraints>
-          <RowConstraints percentHeight="10.0" vgrow="SOMETIMES" />
-            <RowConstraints percentHeight="10.0" vgrow="SOMETIMES" />
-            <RowConstraints percentHeight="10.0" vgrow="SOMETIMES" />
-          <RowConstraints percentHeight="5.0" vgrow="SOMETIMES" />
-            <RowConstraints percentHeight="10.0" vgrow="SOMETIMES" />
-          <RowConstraints percentHeight="5.0" vgrow="SOMETIMES" />
-            <RowConstraints percentHeight="25.0" vgrow="SOMETIMES" />
-            <RowConstraints percentHeight="5.0" vgrow="SOMETIMES" />
-            <RowConstraints percentHeight="20.0" vgrow="SOMETIMES" />
-        </rowConstraints>
-         <children>
-            <ImageView fx:id="img_weapon_" fitHeight="200.0" fitWidth="200.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowSpan="3" GridPane.valignment="CENTER">
-               <image>
-                  <Image url="@../../../easy-menu-gerenciador/resources/icons/add_image.png" />
-               </image>
-               <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-               </GridPane.margin>
-            </ImageView>
-            <Label fx:id="lbl_name_" text="Name_example" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.halignment="CENTER">
-               <GridPane.margin>
-                  <Insets left="5.0" />
-               </GridPane.margin>
-               <font>
-                  <Font size="24.0" />
-               </font>
-            </Label>
-            <Label fx:id="lbl_rarity_" text="Rarity_label" wrapText="true" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="1">
-               <font>
-                  <Font size="18.0" />
-               </font>
-               <GridPane.margin>
-                  <Insets left="10.0" />
-               </GridPane.margin>
-            </Label>
-            <Label fx:id="lbl_lvl_" text="LVL : X" GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.rowIndex="1">
-               <font>
-                  <Font size="18.0" />
-               </font>
-               <GridPane.margin>
-                  <Insets left="10.0" />
-               </GridPane.margin>
-            </Label>
-            <Label fx:id="lbl_durability_" text="Durabilty: X" GridPane.columnIndex="2" GridPane.rowIndex="2">
-               <font>
-                  <Font size="16.0" />
-               </font>
-               <GridPane.margin>
-                  <Insets left="10.0" />
-               </GridPane.margin>
-            </Label>
-            <Label alignment="CENTER" contentDisplay="CENTER" text="Requisites" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="3">
-               <GridPane.margin>
-                  <Insets left="5.0" />
-               </GridPane.margin>
-               <font>
-                  <Font name="System Bold" size="16.0" />
-               </font>
-            </Label>
-            <Label text="Atributes and Skills" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="5">
-               <font>
-                  <Font name="System Bold" size="16.0" />
-               </font>
-            </Label>
-            <Label text="Description" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="7">
-               <font>
-                  <Font name="System Bold" size="18.0" />
-               </font>
-            </Label>
-            <Label fx:id="lbl_STR_" text="X STR" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <Label fx:id="lbl_AGI_" text="X AGI" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <Label fx:id="lbl_INT_" text="X INT" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <Label fx:id="lbl_WIS_" text="X WIS" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <JFXTextArea fx:id="txt_desc_" editable="false" promptText="Weapon description" style="-fx-border-color: snow;" wrapText="true" GridPane.columnSpan="2147483647" GridPane.rowIndex="8">
-               <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-               </GridPane.margin>
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </JFXTextArea>
-            <JFXTextArea fx:id="txt_atributes_" editable="false" promptText="Atributes and skills" style="-fx-border-color: black;" GridPane.columnSpan="2147483647" GridPane.rowIndex="6">
-               <font>
-                  <Font size="16.0" />
-               </font>
-               <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-               </GridPane.margin>
-            </JFXTextArea>
+            </GridPane>
          </children>
       </GridPane>
    </children>
-</GridPane>
+</VBox>

@@ -3,6 +3,8 @@ package BS.Battle;
 import BS.Agents.Agent;
 import BS.SkillTrees.Skill;
 
+import java.util.List;
+
 /**
  * This class represents a action in the battle
  * @author Bruno Cesar
@@ -11,9 +13,7 @@ import BS.SkillTrees.Skill;
 public class Action {
 
     private Agent source;
-    private Agent target;
+    private List<Agent> target;
     private Skill skill;
-
-
 
 }

@@ -1,23 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.image.*?>
-<?import javafx.scene.text.*?>
-<?import javafx.geometry.*?>
-<?import com.jfoenix.controls.*?>
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXTreeTableView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<GridPane fx:id="main_pane_" prefHeight="1080.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controllers.CreateWeaponController">
+<GridPane fx:id="main_pane_" prefHeight="1000.0" prefWidth="960.0" style="-fx-background-color: grey;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controllers.CreateWeaponController">
    <columnConstraints>
       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
    </columnConstraints>
    <rowConstraints>
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-      <RowConstraints minHeight="10.0" percentHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" percentHeight="5.0" prefHeight="30.0" vgrow="SOMETIMES" />
    </rowConstraints>
    <children>
       <GridPane fx:id="detail_pane_" style="-fx-background-color: grey;" GridPane.columnSpan="2147483647">
@@ -39,7 +44,7 @@
          <children>
             <ImageView fx:id="img_weapon_" fitHeight="250.0" fitWidth="250.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="4" GridPane.valignment="CENTER" GridPane.vgrow="NEVER">
                <image>
-                  <Image url="@../../../easy-menu-gerenciador/resources/icons/add_image.png" />
+                  <Image url="@../icons/add_photo.png" />
                </image>
                <GridPane.margin>
                   <Insets />
@@ -145,7 +150,7 @@
             </Label>
             <JFXTextField fx:id="txtf_durability" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="3" />
             <JFXComboBox fx:id="cbox_class" prefWidth="200.0" promptText="Class" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-            <JFXTreeTableView fx:id="treeview_atributes" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="4">
+            <JFXTreeTableView fx:id="treetableview_atributes" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="4">
                <GridPane.margin>
                   <Insets bottom="5.0" right="5.0" />
                </GridPane.margin></JFXTreeTableView>
@@ -168,16 +173,31 @@
                   <Insets left="20.0" right="100.0" />
                </GridPane.margin>
             </JFXTextField>
+            <VBox fx:id="vbox_skills" alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
+               <children>
+                  <JFXButton alignment="CENTER" buttonType="RAISED" text="Add skill" VBox.vgrow="SOMETIMES">
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+            </VBox>
          </children>
       </GridPane>
       <JFXButton buttonType="RAISED" onAction="#cancel" ripplerFill="#ab0606" style="-fx-background-color: crimson;" text="CANCEL" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
          <font>
-            <Font size="28.0" />
+            <Font size="22.0" />
          </font>
       </JFXButton>
       <JFXButton buttonType="RAISED" onAction="#save" ripplerFill="#1add65" style="-fx-background-color: lightgreen;" text="SAVE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
          <font>
-            <Font size="28.0" />
+            <Font size="22.0" />
          </font>
       </JFXButton>
    </children>

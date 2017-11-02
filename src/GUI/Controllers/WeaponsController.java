@@ -8,10 +8,10 @@ import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTreeTableView;
 import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 
-import javax.swing.text.html.ImageView;
 
 /**
  * Controlador da tela principal
@@ -56,7 +56,7 @@ public class WeaponsController implements BaseController {
      * Opens the windows for creating a weapon
      */
     public void create(){
-
+        controller_.setVisibleScreen("create_weapon");
     }
 
     /**

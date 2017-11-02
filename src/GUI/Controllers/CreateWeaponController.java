@@ -5,9 +5,9 @@ import FXController.BaseController;
 import FXController.ScreenController;
 import com.jfoenix.controls.*;
 import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 
-import javax.swing.text.html.ImageView;
 
 /**
  * Controlador da tela principal
@@ -30,7 +30,7 @@ public class CreateWeaponController implements BaseController {
     public JFXTextField txtf_durability;
 
     public JFXTextArea txt_desc_;
-    public JFXTreeView treeview_atributes;
+    public JFXTreeTableView treetableview_atributes;
 
     public GridPane main_pane_;
 
