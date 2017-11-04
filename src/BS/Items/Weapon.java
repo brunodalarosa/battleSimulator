@@ -1,5 +1,6 @@
 package BS.Items;
 
+import BS.CombatAttributes;
 import BS.SkillTrees.SkillTree;
 
 /**
@@ -22,54 +23,14 @@ public class Weapon {
     }
 
     //Basic attributes
-    protected String name;
-    protected String desc;
-    protected Rarity rarity;
-    protected SkillTree skill_tree;
-    protected Requirements requirements;
-    protected int durability;
-
-    protected boolean fire_dmg;
-    protected float fire_dmg_v;
-
-    protected boolean fire_effect;
-    protected float fire_effect_v;
-
-    protected boolean ice_dmg;
-    protected float ice_dmg_v;
-
-    protected boolean eletric_dmg;
-    protected float eletric_dmg_v;
-
-    protected boolean dark_dmg;
-    protected float dark_dmg_v;
-
-    protected boolean neutral_magic_dmg;
-    protected float neutral_magic_dmg_v;
-
-    protected boolean poison_effect;
-    protected float poison_effect_v;
-
-    protected boolean acid_effect;
-    protected float acid_effect_v;
-
-    protected boolean pierce_effect;
-    protected float pierce_effect_v;
-
-    protected boolean slash_dmg;
-    protected float slash_dmg_v;
-
-    protected boolean bash_dmg;
-    protected float bash_dmg_v;
-
-    protected boolean heal_pwr;
-    protected float heal_pwr_v;
-
-    protected boolean heal_bonus;
-    protected float heal_bonus_v;
-
-    protected boolean curse_bonus;
-    protected float curse_bonus_v;
+    private String name;
+    private String desc;
+    private Rarity rarity;
+    private SkillTree skill_tree;
+    private Requirements requirements;
+    private int durability;
+    private CombatAttributes attributes;
+    
 
     public String getName() {
         return name;

@@ -6,7 +6,7 @@ public enum EquipmentType {
     FEET("feet",3),
     BACK("back",4),
     RING("ring",5),
-    AMULET("amulet",6);
+    AMULET("accessory",6);
 
     private String type;
     private int id;

@@ -18,11 +18,15 @@ import javafx.scene.layout.GridPane;
 public class CharactersController implements BaseController {
     private ScreenController controller_;
 
-    public JFXComboBox cbox_classes_; //TODO add type
     public JFXTreeTableView ttv_characters;
-    public ImageView img_enemy_;     //Enemy image
-    public JFXTextField txt_name_;   //Enemy's name
-    public JFXComboBox cbox_sex_; //Enemy's rarity
+
+    public ImageView img_character_;
+    public JFXTextField txt_name_;
+    public JFXComboBox cbox_sex_;
+    public JFXTextField txt_lvl_;
+
+    /* Equipments */
+
     public JFXComboBox cbox_accessory_;
     public JFXComboBox cbox_head_;
     public JFXComboBox cbox_ring_;
@@ -31,13 +35,57 @@ public class CharactersController implements BaseController {
     public JFXComboBox cbox_back_;
     public JFXComboBox cbox_mainW_;
     public JFXComboBox cbox_subW_;
-    public JFXTextField txt_lvl_;    //Character Level
+
+    /* Primary Attributes */
+
     public JFXTextField txt_STR_;
     public JFXTextField txt_AGI_;
     public JFXTextField txt_VIT_;
     public JFXTextField txt_INT_;
     public JFXTextField txt_WIS_;
     public JFXTextField txt_LCK_;
+
+    /* Combat Attributes */
+
+    public JFXTextField txt_att_HP;
+    public JFXTextField txt_att_MP;
+    public JFXTextField txt_att_WP;
+    public JFXTextField txt_att_SPD;
+    public JFXTextField txt_att_ATK;
+    public JFXTextField txt_att_MATK;
+    public JFXTextField txt_att_DEF;
+    public JFXTextField txt_att_MDEF;
+    public JFXTextField txt_att_ACC;
+    public JFXTextField txt_att_EVA;
+    public JFXTextField txt_att_NOT;
+    public JFXTextField txt_att_CRIT;
+
+    public JFXTextField txt_att_fireBonus;
+    public JFXTextField txt_att_iceBonus;
+    public JFXTextField txt_att_eletricBonus;
+    public JFXTextField txt_att_windBonus;
+    public JFXTextField txt_att_poisonBonus;
+    public JFXTextField txt_att_acidBonus;
+    public JFXTextField txt_att_darkBonus;
+    public JFXTextField txt_att_healBonus;
+    public JFXTextField txt_att_heal_absorbBonus;
+    public JFXTextField txt_att_pierceBonus;
+    public JFXTextField txt_att_bashBonus;
+    public JFXTextField txt_att_slashBonus;
+    public JFXTextField txt_att_mp_regenBonus;
+    public JFXTextField txt_att_hp_regenBonus;
+
+    public JFXTextField txt_att_fireRes;
+    public JFXTextField txt_att_iceRes;
+    public JFXTextField txt_att_eletricRes;
+    public JFXTextField txt_att_windRes;
+    public JFXTextField txt_att_poisonRes;
+    public JFXTextField txt_att_acidRes;
+    public JFXTextField txt_att_darkRes;
+    public JFXTextField txt_att_sleepRes;
+    public JFXTextField txt_att_muteRes;
+    public JFXTextField txt_att_blockChance;
+
 
     public GridPane main_pane_;
 

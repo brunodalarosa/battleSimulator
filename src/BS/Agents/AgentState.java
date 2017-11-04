@@ -1,7 +1,7 @@
 package BS.Agents;
 
 /**
- * This ENUM is used in Agent to set an array of possibles states of an Agent in a fight.
+ * This ENUM is used in Agent to set an array of possibles states of an Agent in battle.
  */
 public enum AgentState {
     DEAD("dead",         0),

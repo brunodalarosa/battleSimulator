@@ -22,7 +22,7 @@ public class Battle {
 
 
     //ISSO AQUI FUNCIONA???? LOL
-    Comparator<Agent> spdComparator = (o1, o2) -> (int) (o1.getSpd() - o2.getSpd());
+    Comparator<Agent> spdComparator = (o1, o2) -> (int) (o1.getAttributes().getSpd() - o2.getAttributes().getSpd());
 
     public Battle(String id, List<Character> party, List<Enemy> enemies) {
         this.id = id;

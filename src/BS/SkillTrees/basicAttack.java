@@ -18,14 +18,14 @@ public class basicAttack extends Skill {
     public basicAttack(Agent source, Agent target){
         super(source);
         //TODO Encontrar uma boa formula de cálculo para ataque fisico e modificar esta função implementando ela.
-        boolean hit = BS.getInstance().getSkillUtils().hit(source.getAcc(),target.getEva());
+        boolean hit = BS.getInstance().getSkillUtils().hit(source.getAttributes().getAcc(),target.getAttributes().getEva());
 
         if(hit){
             float dmg;
 
-            if(source.getAtk() - target.getDef() <= source.getAtk() * 0.01f) {
-                dmg = source.getAtk() * 0.01f;
-            } else dmg = source.getAtk() - target.getDef();
+            if(source.getAttributes().getAtk() - target.getAttributes().getDef() <= source.getAttributes().getAtk() * 0.01f) {
+                dmg = source.getAttributes().getAtk() * 0.01f;
+            } else dmg = source.getAttributes().getAtk() - target.getAttributes().getDef();
 
             //TODO log attack
             //TODO display attack

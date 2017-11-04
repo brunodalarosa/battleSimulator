@@ -9,7 +9,8 @@ public class Character extends Agent {
      * Basic character constructor
      */
     public Character(String name, int lvl, int HP, int STR, int AGI, int INT, int WIS, int VIG, int LCK) {
-        super(name, lvl, HP);
+        super(name, HP, AgentType.USER);
+        this.lvl = lvl;
         this.STR = STR;
         this.AGI = AGI;
         this.INT = INT;
@@ -34,7 +35,7 @@ public class Character extends Agent {
     private Equipment feet;
     private Equipment back;
     private Equipment ring;
-    private Equipment amulet;
+    private Equipment accessory;
 
     public int getSTR() {
         return STR;

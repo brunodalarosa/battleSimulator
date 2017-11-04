@@ -150,7 +150,7 @@
                   <RowConstraints percentHeight="10.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <ImageView fx:id="img_enemy_" fitHeight="250.0" fitWidth="150.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowSpan="4" GridPane.valignment="CENTER">
+                  <ImageView fx:id="img_character_" fitHeight="250.0" fitWidth="150.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowSpan="4" GridPane.valignment="CENTER">
                      <GridPane.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </GridPane.margin>
@@ -185,6 +185,7 @@
                            <columnConstraints>
                               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="50.0" />
                               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="50.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="50.0" prefWidth="100.0" />
                            </columnConstraints>
                            <rowConstraints>
                               <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
@@ -199,7 +200,7 @@
                                                 <Insets right="5.0" />
                                              </padding>
                                           </Label>
-                                          <JFXTextField fx:id="txt_att_val13" alignment="CENTER" promptText="Atribute value">
+                                          <JFXTextField fx:id="txt_att_HP" alignment="CENTER" editable="false" promptText="Atribute value">
                                              <HBox.margin>
                                                 <Insets left="5.0" />
                                              </HBox.margin>
@@ -216,7 +217,7 @@
                                                 <Insets right="5.0" />
                                              </padding>
                                           </Label>
-                                          <JFXTextField fx:id="txt_att_val131" alignment="CENTER" promptText="Atribute value">
+                                          <JFXTextField fx:id="txt_att_MP" alignment="CENTER" editable="false" promptText="Atribute value">
                                              <HBox.margin>
                                                 <Insets left="5.0" />
                                              </HBox.margin>
@@ -228,12 +229,12 @@
                                     </HBox>
                                     <HBox alignment="CENTER" layoutX="10.0" layoutY="50.0">
                                        <children>
-                                          <Label fx:id="lbl_atribute1311" text="Hit points (HP)">
+                                          <Label fx:id="lbl_atribute1311" text="Will points (WP)">
                                              <padding>
                                                 <Insets right="5.0" />
                                              </padding>
                                           </Label>
-                                          <JFXTextField fx:id="txt_att_val1311" alignment="CENTER" promptText="Atribute value">
+                                          <JFXTextField fx:id="txt_att_WP" alignment="CENTER" editable="false" promptText="Atribute value">
                                              <HBox.margin>
                                                 <Insets left="5.0" />
                                              </HBox.margin>
@@ -245,12 +246,12 @@
                                     </HBox>
                                     <HBox alignment="CENTER" layoutX="10.0" layoutY="75.0">
                                        <children>
-                                          <Label fx:id="lbl_atribute13111" text="Hit points (HP)">
+                                          <Label fx:id="lbl_atribute13111" text="Speed (SPD)">
                                              <padding>
                                                 <Insets right="5.0" />
                                              </padding>
                                           </Label>
-                                          <JFXTextField fx:id="txt_att_val13111" alignment="CENTER" promptText="Atribute value">
+                                          <JFXTextField fx:id="txt_att_SPD" alignment="CENTER" editable="false" promptText="Atribute value">
                                              <HBox.margin>
                                                 <Insets left="5.0" />
                                              </HBox.margin>
@@ -262,12 +263,12 @@
                                     </HBox>
                                     <HBox alignment="CENTER" layoutX="10.0" layoutY="55.0">
                                        <children>
-                                          <Label fx:id="lbl_atribute1312" text="Hit points (HP)">
+                                          <Label fx:id="lbl_atribute1312" text="Attack (ATK)">
                                              <padding>
                                                 <Insets right="5.0" />
                                              </padding>
                                           </Label>
-                                          <JFXTextField fx:id="txt_att_val1312" alignment="CENTER" promptText="Atribute value">
+                                          <JFXTextField fx:id="txt_att_ATK" alignment="CENTER" editable="false" promptText="Atribute value">
                                              <HBox.margin>
                                                 <Insets left="5.0" />
                                              </HBox.margin>
@@ -279,12 +280,12 @@
                                     </HBox>
                                     <HBox alignment="CENTER" layoutX="10.0" layoutY="95.0">
                                        <children>
-                                          <Label fx:id="lbl_atribute13112" text="Hit points (HP)">
+                                          <Label fx:id="lbl_atribute13112" text="Magic attack (MATK)">
                                              <padding>
                                                 <Insets right="5.0" />
                                              </padding>
                                           </Label>
-                                          <JFXTextField fx:id="txt_att_val13112" alignment="CENTER" promptText="Atribute value">
+                                          <JFXTextField fx:id="txt_att_MATK" alignment="CENTER" editable="false" promptText="Atribute value">
                                              <HBox.margin>
                                                 <Insets left="5.0" />
                                              </HBox.margin>
@@ -296,12 +297,12 @@
                                     </HBox>
                                     <HBox alignment="CENTER" layoutX="10.0" layoutY="135.0">
                                        <children>
-                                          <Label fx:id="lbl_atribute131111" text="Hit points (HP)">
+                                          <Label fx:id="lbl_atribute131111" text="Defense (DEF)">
                                              <padding>
                                                 <Insets right="5.0" />
                                              </padding>
                                           </Label>
-                                          <JFXTextField fx:id="txt_att_val131111" alignment="CENTER" promptText="Atribute value">
+                                          <JFXTextField fx:id="txt_att_DEF" alignment="CENTER" editable="false" promptText="Atribute value">
                                              <HBox.margin>
                                                 <Insets left="5.0" />
                                              </HBox.margin>
@@ -313,12 +314,80 @@
                                     </HBox>
                                     <HBox alignment="CENTER" layoutX="10.0" layoutY="255.0">
                                        <children>
-                                          <Label fx:id="lbl_atribute1311111" text="Hit points (HP)">
+                                          <Label fx:id="lbl_atribute1311111" text="Magic Defense (MDEF)">
                                              <padding>
                                                 <Insets right="5.0" />
                                              </padding>
                                           </Label>
-                                          <JFXTextField fx:id="txt_att_val1311111" alignment="CENTER" promptText="Atribute value">
+                                          <JFXTextField fx:id="txt_att_MDEF" alignment="CENTER" editable="false" promptText="Atribute value">
+                                             <HBox.margin>
+                                                <Insets left="5.0" />
+                                             </HBox.margin>
+                                          </JFXTextField>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" top="5.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox alignment="CENTER" VBox.vgrow="ALWAYS">
+                                       <children>
+                                          <Label fx:id="lbl_atribute131" text="Accuracy (ACC)">
+                                             <padding>
+                                                <Insets right="5.0" />
+                                             </padding>
+                                          </Label>
+                                          <JFXTextField fx:id="txt_att_ACC" alignment="CENTER" editable="false" promptText="Atribute value">
+                                             <HBox.margin>
+                                                <Insets left="5.0" />
+                                             </HBox.margin>
+                                          </JFXTextField>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" top="5.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox alignment="CENTER">
+                                       <children>
+                                          <Label fx:id="lbl_atribute1311" text="Evasion (EVA)">
+                                             <padding>
+                                                <Insets right="5.0" />
+                                             </padding>
+                                          </Label>
+                                          <JFXTextField fx:id="txt_att_EVA" alignment="CENTER" editable="false" promptText="Atribute value">
+                                             <HBox.margin>
+                                                <Insets left="5.0" />
+                                             </HBox.margin>
+                                          </JFXTextField>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" top="5.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox alignment="CENTER">
+                                       <children>
+                                          <Label fx:id="lbl_atribute13111" text="Notoriety (NOT)">
+                                             <padding>
+                                                <Insets right="5.0" />
+                                             </padding>
+                                          </Label>
+                                          <JFXTextField fx:id="txt_att_NOT" alignment="CENTER" editable="false" promptText="Atribute value">
+                                             <HBox.margin>
+                                                <Insets left="5.0" />
+                                             </HBox.margin>
+                                          </JFXTextField>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" top="5.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox alignment="CENTER">
+                                       <children>
+                                          <Label fx:id="lbl_atribute131111" text="Crit. Chance (CRIT)">
+                                             <padding>
+                                                <Insets right="5.0" />
+                                             </padding>
+                                          </Label>
+                                          <JFXTextField fx:id="txt_att_CRIT" alignment="CENTER" editable="false" promptText="Atribute value">
                                              <HBox.margin>
                                                 <Insets left="5.0" />
                                              </HBox.margin>
@@ -332,140 +401,416 @@
                               </VBox>
                               <VBox fx:id="vbox_atributes1" alignment="CENTER" layoutX="10.0" layoutY="10.0" GridPane.columnIndex="1">
                                  <children>
-                                    <HBox alignment="CENTER" VBox.vgrow="ALWAYS">
-                                       <children>
-                                          <Label fx:id="lbl_atribute131" text="Hit points (HP)">
-                                             <padding>
-                                                <Insets right="5.0" />
-                                             </padding>
-                                          </Label>
-                                          <JFXTextField fx:id="txt_att_val131" alignment="CENTER" promptText="Atribute value">
-                                             <HBox.margin>
-                                                <Insets left="5.0" />
-                                             </HBox.margin>
-                                          </JFXTextField>
-                                       </children>
-                                       <VBox.margin>
-                                          <Insets bottom="10.0" top="5.0" />
-                                       </VBox.margin>
-                                    </HBox>
-                                    <HBox alignment="CENTER" layoutX="10.0" layoutY="15.0">
-                                       <children>
-                                          <Label fx:id="lbl_atribute1311" text="Hit points (HP)">
-                                             <padding>
-                                                <Insets right="5.0" />
-                                             </padding>
-                                          </Label>
-                                          <JFXTextField fx:id="txt_att_val1311" alignment="CENTER" promptText="Atribute value">
-                                             <HBox.margin>
-                                                <Insets left="5.0" />
-                                             </HBox.margin>
-                                          </JFXTextField>
-                                       </children>
-                                       <VBox.margin>
-                                          <Insets bottom="10.0" top="5.0" />
-                                       </VBox.margin>
-                                    </HBox>
-                                    <HBox alignment="CENTER" layoutX="10.0" layoutY="50.0">
-                                       <children>
-                                          <Label fx:id="lbl_atribute13111" text="Hit points (HP)">
-                                             <padding>
-                                                <Insets right="5.0" />
-                                             </padding>
-                                          </Label>
-                                          <JFXTextField fx:id="txt_att_val13111" alignment="CENTER" promptText="Atribute value">
-                                             <HBox.margin>
-                                                <Insets left="5.0" />
-                                             </HBox.margin>
-                                          </JFXTextField>
-                                       </children>
-                                       <VBox.margin>
-                                          <Insets bottom="10.0" top="5.0" />
-                                       </VBox.margin>
-                                    </HBox>
-                                    <HBox alignment="CENTER" layoutX="10.0" layoutY="75.0">
-                                       <children>
-                                          <Label fx:id="lbl_atribute131111" text="Hit points (HP)">
-                                             <padding>
-                                                <Insets right="5.0" />
-                                             </padding>
-                                          </Label>
-                                          <JFXTextField fx:id="txt_att_val131111" alignment="CENTER" promptText="Atribute value">
-                                             <HBox.margin>
-                                                <Insets left="5.0" />
-                                             </HBox.margin>
-                                          </JFXTextField>
-                                       </children>
-                                       <VBox.margin>
-                                          <Insets bottom="10.0" top="5.0" />
-                                       </VBox.margin>
-                                    </HBox>
-                                    <HBox alignment="CENTER" layoutX="10.0" layoutY="55.0">
-                                       <children>
-                                          <Label fx:id="lbl_atribute13121" text="Hit points (HP)">
-                                             <padding>
-                                                <Insets right="5.0" />
-                                             </padding>
-                                          </Label>
-                                          <JFXTextField fx:id="txt_att_val13121" alignment="CENTER" promptText="Atribute value">
-                                             <HBox.margin>
-                                                <Insets left="5.0" />
-                                             </HBox.margin>
-                                          </JFXTextField>
-                                       </children>
-                                       <VBox.margin>
-                                          <Insets bottom="10.0" top="5.0" />
-                                       </VBox.margin>
-                                    </HBox>
                                     <HBox alignment="CENTER" layoutX="10.0" layoutY="95.0">
                                        <children>
-                                          <Label fx:id="lbl_atribute131121" text="Hit points (HP)">
+                                          <Label fx:id="lbl_atribute131121" text="Fire Bonus">
                                              <padding>
                                                 <Insets right="5.0" />
                                              </padding>
                                           </Label>
-                                          <JFXTextField fx:id="txt_att_val131121" alignment="CENTER" promptText="Atribute value">
+                                          <JFXTextField fx:id="txt_att_fireBonus" alignment="CENTER" editable="false" promptText="Atribute value">
                                              <HBox.margin>
                                                 <Insets left="5.0" />
                                              </HBox.margin>
                                           </JFXTextField>
                                        </children>
                                        <VBox.margin>
-                                          <Insets bottom="10.0" top="5.0" />
+                                          <Insets bottom="5.0" top="5.0" />
                                        </VBox.margin>
                                     </HBox>
                                     <HBox alignment="CENTER" layoutX="10.0" layoutY="135.0">
                                        <children>
-                                          <Label fx:id="lbl_atribute1311111" text="Hit points (HP)">
+                                          <Label fx:id="lbl_atribute1311111" text="Ice Bonus">
                                              <padding>
                                                 <Insets right="5.0" />
                                              </padding>
                                           </Label>
-                                          <JFXTextField fx:id="txt_att_val1311111" alignment="CENTER" promptText="Atribute value">
+                                          <JFXTextField fx:id="txt_att_iceBonus" alignment="CENTER" editable="false" promptText="Atribute value">
                                              <HBox.margin>
                                                 <Insets left="5.0" />
                                              </HBox.margin>
                                           </JFXTextField>
                                        </children>
                                        <VBox.margin>
-                                          <Insets bottom="10.0" top="5.0" />
+                                          <Insets bottom="5.0" top="5.0" />
                                        </VBox.margin>
                                     </HBox>
                                     <HBox alignment="CENTER" layoutX="10.0" layoutY="255.0">
                                        <children>
-                                          <Label fx:id="lbl_atribute13111111" text="Hit points (HP)">
+                                          <Label fx:id="lbl_atribute13111111" text="Eletric Bonus">
                                              <padding>
                                                 <Insets right="5.0" />
                                              </padding>
                                           </Label>
-                                          <JFXTextField fx:id="txt_att_val13111111" alignment="CENTER" promptText="Atribute value">
+                                          <JFXTextField fx:id="txt_att_eletricBonus" alignment="CENTER" editable="false" promptText="Atribute value">
                                              <HBox.margin>
                                                 <Insets left="5.0" />
                                              </HBox.margin>
                                           </JFXTextField>
                                        </children>
                                        <VBox.margin>
-                                          <Insets bottom="10.0" top="5.0" />
+                                          <Insets bottom="5.0" top="5.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox alignment="CENTER" layoutX="10.0" layoutY="175.0">
+                                       <children>
+                                          <Label fx:id="lbl_atribute131211" text="Wind Bonus">
+                                             <padding>
+                                                <Insets right="5.0" />
+                                             </padding>
+                                          </Label>
+                                          <JFXTextField fx:id="txt_att_windBonus" alignment="CENTER" editable="false" promptText="Atribute value">
+                                             <HBox.margin>
+                                                <Insets left="5.0" />
+                                             </HBox.margin>
+                                          </JFXTextField>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" top="5.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox alignment="CENTER" layoutX="10.0" layoutY="55.0">
+                                       <children>
+                                          <Label fx:id="lbl_atribute13121" text="Poison Bonus">
+                                             <padding>
+                                                <Insets right="5.0" />
+                                             </padding>
+                                          </Label>
+                                          <JFXTextField fx:id="txt_att_poisonBonus" alignment="CENTER" editable="false" promptText="Atribute value">
+                                             <HBox.margin>
+                                                <Insets left="5.0" />
+                                             </HBox.margin>
+                                          </JFXTextField>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" top="5.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox alignment="CENTER" layoutX="10.0" layoutY="163.0">
+                                       <children>
+                                          <Label fx:id="lbl_atribute1311211" text="Acid Bonus">
+                                             <padding>
+                                                <Insets right="5.0" />
+                                             </padding>
+                                          </Label>
+                                          <JFXTextField fx:id="txt_att_acidBonus" alignment="CENTER" editable="false" promptText="Atribute value">
+                                             <HBox.margin>
+                                                <Insets left="5.0" />
+                                             </HBox.margin>
+                                          </JFXTextField>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" top="5.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox alignment="CENTER" layoutX="10.0" layoutY="190.0">
+                                       <children>
+                                          <Label fx:id="lbl_atribute13111112" text="Dark Bonus">
+                                             <padding>
+                                                <Insets right="5.0" />
+                                             </padding>
+                                          </Label>
+                                          <JFXTextField fx:id="txt_att_darkBonus" alignment="CENTER" editable="false" promptText="Atribute value">
+                                             <HBox.margin>
+                                                <Insets left="5.0" />
+                                             </HBox.margin>
+                                          </JFXTextField>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" top="5.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox alignment="CENTER" layoutX="10.0" layoutY="253.0">
+                                       <children>
+                                          <Label fx:id="lbl_atribute1312111" text="Heal Bonus">
+                                             <padding>
+                                                <Insets right="5.0" />
+                                             </padding>
+                                          </Label>
+                                          <JFXTextField fx:id="txt_att_healBonus" alignment="CENTER" editable="false" promptText="Atribute value">
+                                             <HBox.margin>
+                                                <Insets left="5.0" />
+                                             </HBox.margin>
+                                          </JFXTextField>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" top="5.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox alignment="CENTER" layoutX="10.0" layoutY="125.0">
+                                       <children>
+                                          <Label fx:id="lbl_atribute1311212" text="Heal absorb Bonus">
+                                             <padding>
+                                                <Insets right="5.0" />
+                                             </padding>
+                                          </Label>
+                                          <JFXTextField fx:id="txt_att_heal_absorbBonus" alignment="CENTER" editable="false" promptText="Atribute value">
+                                             <HBox.margin>
+                                                <Insets left="5.0" />
+                                             </HBox.margin>
+                                          </JFXTextField>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" top="5.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox alignment="CENTER" layoutX="10.0" layoutY="215.0">
+                                       <children>
+                                          <Label fx:id="lbl_atribute1312112" text="Pierce Bonus">
+                                             <padding>
+                                                <Insets right="5.0" />
+                                             </padding>
+                                          </Label>
+                                          <JFXTextField fx:id="txt_att_pierceBonus" alignment="CENTER" editable="false" promptText="Atribute value">
+                                             <HBox.margin>
+                                                <Insets left="5.0" />
+                                             </HBox.margin>
+                                          </JFXTextField>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" top="5.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox alignment="CENTER" layoutX="10.0" layoutY="128.0">
+                                       <children>
+                                          <Label fx:id="lbl_atribute13111113" text="Bash bonus">
+                                             <padding>
+                                                <Insets right="5.0" />
+                                             </padding>
+                                          </Label>
+                                          <JFXTextField fx:id="txt_att_bashBonus" alignment="CENTER" editable="false" promptText="Atribute value">
+                                             <HBox.margin>
+                                                <Insets left="5.0" />
+                                             </HBox.margin>
+                                          </JFXTextField>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" top="5.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox alignment="CENTER" layoutX="10.0" layoutY="255.0">
+                                       <children>
+                                          <Label fx:id="lbl_atribute13112111" text="Slash Bonus">
+                                             <padding>
+                                                <Insets right="5.0" />
+                                             </padding>
+                                          </Label>
+                                          <JFXTextField fx:id="txt_att_slashBonus" alignment="CENTER" editable="false" promptText="Atribute value">
+                                             <HBox.margin>
+                                                <Insets left="5.0" />
+                                             </HBox.margin>
+                                          </JFXTextField>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" top="5.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox alignment="CENTER" layoutX="10.0" layoutY="133.0">
+                                       <children>
+                                          <Label fx:id="lbl_atribute1312113" text="MP regen Bonus">
+                                             <padding>
+                                                <Insets right="5.0" />
+                                             </padding>
+                                          </Label>
+                                          <JFXTextField fx:id="txt_att_mp_regenBonus" alignment="CENTER" editable="false" promptText="Atribute value">
+                                             <HBox.margin>
+                                                <Insets left="5.0" />
+                                             </HBox.margin>
+                                          </JFXTextField>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" top="5.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox alignment="CENTER" layoutX="10.0" layoutY="465.0">
+                                       <children>
+                                          <Label fx:id="lbl_atribute13121131" text="HP regen Bonus">
+                                             <padding>
+                                                <Insets right="5.0" />
+                                             </padding>
+                                          </Label>
+                                          <JFXTextField fx:id="txt_att_hp_regenBonus" alignment="CENTER" editable="false" promptText="Atribute value">
+                                             <HBox.margin>
+                                                <Insets left="5.0" />
+                                             </HBox.margin>
+                                          </JFXTextField>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" top="5.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                              <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2">
+                                 <children>
+                                    <HBox alignment="CENTER">
+                                       <children>
+                                          <Label fx:id="lbl_atribute13112112" text="Fire resistance">
+                                             <padding>
+                                                <Insets right="5.0" />
+                                             </padding>
+                                          </Label>
+                                          <JFXTextField fx:id="txt_att_fireRes" alignment="CENTER" editable="false" promptText="Atribute value">
+                                             <HBox.margin>
+                                                <Insets left="5.0" />
+                                             </HBox.margin>
+                                          </JFXTextField>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" top="5.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox alignment="CENTER">
+                                       <children>
+                                          <Label fx:id="lbl_atribute131111111" text="Ice resistance">
+                                             <padding>
+                                                <Insets right="5.0" />
+                                             </padding>
+                                          </Label>
+                                          <JFXTextField fx:id="txt_att_iceRes" alignment="CENTER" editable="false" promptText="Atribute value">
+                                             <HBox.margin>
+                                                <Insets left="5.0" />
+                                             </HBox.margin>
+                                          </JFXTextField>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" top="5.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox alignment="CENTER">
+                                       <children>
+                                          <Label fx:id="lbl_atribute131111111" text="Eletric resistance">
+                                             <padding>
+                                                <Insets right="5.0" />
+                                             </padding>
+                                          </Label>
+                                          <JFXTextField fx:id="txt_att_eletricRes" alignment="CENTER" editable="false" promptText="Atribute value">
+                                             <HBox.margin>
+                                                <Insets left="5.0" />
+                                             </HBox.margin>
+                                          </JFXTextField>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" top="5.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox alignment="CENTER">
+                                       <children>
+                                          <Label fx:id="lbl_atribute13121111" text="Wind resistance">
+                                             <padding>
+                                                <Insets right="5.0" />
+                                             </padding>
+                                          </Label>
+                                          <JFXTextField fx:id="txt_att_windRes" alignment="CENTER" editable="false" promptText="Atribute value">
+                                             <HBox.margin>
+                                                <Insets left="5.0" />
+                                             </HBox.margin>
+                                          </JFXTextField>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" top="5.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox alignment="CENTER">
+                                       <children>
+                                          <Label fx:id="lbl_atribute1312114" text="Poison resistance">
+                                             <padding>
+                                                <Insets right="5.0" />
+                                             </padding>
+                                          </Label>
+                                          <JFXTextField fx:id="txt_att_poisonRes" alignment="CENTER" editable="false" promptText="Atribute value">
+                                             <HBox.margin>
+                                                <Insets left="5.0" />
+                                             </HBox.margin>
+                                          </JFXTextField>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" top="5.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox alignment="CENTER">
+                                       <children>
+                                          <Label fx:id="lbl_atribute131121111" text="Acid resistance">
+                                             <padding>
+                                                <Insets right="5.0" />
+                                             </padding>
+                                          </Label>
+                                          <JFXTextField fx:id="txt_att_acidRes" alignment="CENTER" editable="false" promptText="Atribute value">
+                                             <HBox.margin>
+                                                <Insets left="5.0" />
+                                             </HBox.margin>
+                                          </JFXTextField>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" top="5.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox alignment="CENTER">
+                                       <children>
+                                          <Label fx:id="lbl_atribute131111121" text="Dark resistance">
+                                             <padding>
+                                                <Insets right="5.0" />
+                                             </padding>
+                                          </Label>
+                                          <JFXTextField fx:id="txt_att_darkRes" alignment="CENTER" editable="false" promptText="Atribute value">
+                                             <HBox.margin>
+                                                <Insets left="5.0" />
+                                             </HBox.margin>
+                                          </JFXTextField>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" top="5.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox alignment="CENTER">
+                                       <children>
+                                          <Label fx:id="lbl_atribute13121111" text="Sleep resistance">
+                                             <padding>
+                                                <Insets right="5.0" />
+                                             </padding>
+                                          </Label>
+                                          <JFXTextField fx:id="txt_att_sleepRes" alignment="CENTER" editable="false" promptText="Atribute value">
+                                             <HBox.margin>
+                                                <Insets left="5.0" />
+                                             </HBox.margin>
+                                          </JFXTextField>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" top="5.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox alignment="CENTER">
+                                       <children>
+                                          <Label fx:id="lbl_atribute13112121" text="Mute resistance">
+                                             <padding>
+                                                <Insets right="5.0" />
+                                             </padding>
+                                          </Label>
+                                          <JFXTextField fx:id="txt_att_muteRes" alignment="CENTER" editable="false" promptText="Atribute value">
+                                             <HBox.margin>
+                                                <Insets left="5.0" />
+                                             </HBox.margin>
+                                          </JFXTextField>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" top="5.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox alignment="CENTER">
+                                       <children>
+                                          <Label fx:id="lbl_atribute1311111111" text="Block Chance">
+                                             <padding>
+                                                <Insets right="5.0" />
+                                             </padding>
+                                          </Label>
+                                          <JFXTextField fx:id="txt_att_blockChance" alignment="CENTER" editable="false" promptText="Atribute value">
+                                             <HBox.margin>
+                                                <Insets left="5.0" />
+                                             </HBox.margin>
+                                          </JFXTextField>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" top="5.0" />
                                        </VBox.margin>
                                     </HBox>
                                  </children>
@@ -521,7 +866,7 @@
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <JFXTextField fx:id="txt_STR_" alignment="CENTER" prefHeight="25.0" prefWidth="50.0" promptText="0">
+                        <JFXTextField fx:id="txt_STR_" alignment="CENTER" editable="false" prefHeight="25.0" prefWidth="50.0" promptText="0">
                            <font>
                               <Font size="18.0" />
                            </font>
@@ -535,7 +880,7 @@
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <JFXTextField fx:id="txt_INT_" alignment="CENTER" prefHeight="25.0" prefWidth="50.0" promptText="0">
+                        <JFXTextField fx:id="txt_INT_" alignment="CENTER" editable="false" prefHeight="25.0" prefWidth="50.0" promptText="0">
                            <font>
                               <Font size="18.0" />
                            </font>
@@ -549,7 +894,7 @@
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <JFXTextField fx:id="txt_WIS_" alignment="CENTER" prefHeight="25.0" prefWidth="50.0" promptText="0">
+                        <JFXTextField fx:id="txt_WIS_" alignment="CENTER" editable="false" prefHeight="25.0" prefWidth="50.0" promptText="0">
                            <font>
                               <Font size="18.0" />
                            </font>
@@ -563,7 +908,7 @@
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <JFXTextField fx:id="txt_LCK_" alignment="CENTER" prefHeight="25.0" prefWidth="50.0" promptText="0">
+                        <JFXTextField fx:id="txt_LCK_" alignment="CENTER" editable="false" prefHeight="25.0" prefWidth="50.0" promptText="0">
                            <font>
                               <Font size="18.0" />
                            </font>
@@ -577,7 +922,7 @@
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <JFXTextField fx:id="txt_AGI_" alignment="CENTER" prefHeight="25.0" prefWidth="50.0" promptText="0">
+                        <JFXTextField fx:id="txt_AGI_" alignment="CENTER" editable="false" prefHeight="25.0" prefWidth="50.0" promptText="0">
                            <font>
                               <Font size="18.0" />
                            </font>
@@ -591,7 +936,7 @@
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <JFXTextField fx:id="txt_VIT_" alignment="CENTER" prefHeight="25.0" prefWidth="50.0" promptText="0">
+                        <JFXTextField fx:id="txt_VIT_" alignment="CENTER" editable="false" prefHeight="25.0" prefWidth="50.0" promptText="0">
                            <font>
                               <Font size="18.0" />
                            </font>
