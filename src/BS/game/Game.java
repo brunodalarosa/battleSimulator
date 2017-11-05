@@ -3,10 +3,8 @@ package BS.game;
 import BS.game.actions.Skill;
 import BS.game.agents.Agent;
 
-import java.util.Comparator;
-import java.util.List;
-import java.util.PriorityQueue;
-import java.util.Queue;
+import java.util.*;
+import java.util.concurrent.LinkedBlockingQueue;
 
 public class Game {
     private List<Agent> agents;
@@ -17,8 +15,7 @@ public class Game {
 
     public Game(List<Agent> agents) {
         this.agents = agents;
-        actions = new PriorityQueue<>();
-
+        actions = new LinkedBlockingQueue<>();
         agents.sort(comparator);
     }
 

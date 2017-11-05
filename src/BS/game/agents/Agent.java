@@ -16,14 +16,12 @@ public class Agent {
     private ActionListener action_listener;
     private String img_path;
 
-    public Agent(float hp, String name, int lvl, String img_path,
-                 ActionListener action_listener, List<Skill> skills) {
+    public Agent(float hp, String name, int lvl, String img_path, List<Skill> skills) {
         this.hp = hp;
         this.name = name;
         this.lvl = lvl;
         this.skills = skills;
         this.img_path = img_path;
-        this.action_listener = action_listener;
     }
 
     public float receiveDamage(float damage){
@@ -69,6 +67,10 @@ public class Agent {
 
     public void setSkills(List<Skill> skills) {
         this.skills = skills;
+    }
+
+    public String toString(){
+        return this.name;
     }
 
     public ActionListener getActionListener() {

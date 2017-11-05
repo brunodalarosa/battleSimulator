@@ -12,10 +12,13 @@ public class ControlledActionListener implements ActionListener {
 
     public ControlledActionListener(Agent controlled, Agent player) {
         this.controlled = controlled;
+        this.player = player;
     }
 
     @Override
     public Skill getAction() {
+        if(controlled == null) System.out.printf("nao tem controlled");
+        if(controlled.getSkills() == null) System.out.println("nao tem skills");
         int i = new Random().nextInt(controlled.getSkills().size());
         controlled.getSkills().get(i).setTarget(player);
         return controlled.getSkills().get(i);

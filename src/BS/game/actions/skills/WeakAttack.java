@@ -7,12 +7,15 @@ public class WeakAttack extends Skill{
     private float damage;
 
     public WeakAttack(Agent source) {
-        super(source);
+        super(source,"Weak Attack");
         damage = 0.5f;
     }
 
     @Override
     public void execute() {
-        target.get(0).receiveDamage(damage);
+        for(Agent a : target){
+            a.receiveDamage(damage);
+            System.out.println("weak move");
+        }
     }
 }

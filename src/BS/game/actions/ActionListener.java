@@ -1,6 +1,6 @@
 package BS.game.actions;
 
-public interface ActionListener {
+public interface ActionListener{
 
     Skill getAction();
 }
