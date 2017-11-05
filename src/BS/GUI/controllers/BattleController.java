@@ -1,19 +1,25 @@
 package BS.GUI.controllers;
 
 import BS.BS;
+import BS.game.Game;
+import BS.game.actions.Skill;
 import BS.game.actions.actionListeners.ControlledActionListener;
 import BS.game.actions.actionListeners.PlayerActionListener;
+import BS.game.actions.skills.BasicAtack;
+import BS.game.actions.skills.StrongAttack;
+import BS.game.actions.skills.WeakAttack;
 import BS.game.agents.Agent;
 import FXController.BaseController;
 import FXController.ScreenController;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
-import javafx.geometry.Rectangle2D;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class BattleController implements BaseController {
     private ScreenController controller_;
@@ -29,8 +35,13 @@ public class BattleController implements BaseController {
 
 
     //Teste
+    private Game game;
+    private List<Agent> agents;
     private Agent player;
     private Agent enemy;
+    private List<Skill> player_skills = new ArrayList<>();
+    private List<Skill> enemy_skills = new ArrayList<>();
+
 
     public void close(){
         BS.getInstance().stop();
@@ -58,15 +69,26 @@ public class BattleController implements BaseController {
     @Override
     public void init() {
         //Teste basico
+        player_skills.add(new BasicAtack(player));
+        enemy_skills.add(new WeakAttack(enemy));
+        enemy_skills.add(new StrongAttack(enemy));
 
-        player = new Agent(10, "Paula",1, "/sprites/humans/spr_f_traveler_idle_anim.gif", new PlayerActionListener());
-        enemy = new Agent(5, "Beedrill",2, "/sprites/animals/spr_wasp_idle_anim.gif", new ControlledActionListener());
+        agents = new ArrayList<>();
 
-        Image playerImage = new Image(player.getImg_path(),true);
-        Image enemyImage = new Image(enemy.getImg_path(),true);
+        player = new Agent(10, "Paula",1, "/sprites/humans/spr_f_traveler_idle_anim.gif",
+                new PlayerActionListener(player), player_skills);
+        enemy = new Agent(5, "Beedrill",2, "/sprites/animals/spr_wasp_idle_anim.gif",
+                new ControlledActionListener(enemy, player), enemy_skills);
+
+        Image playerImage = new Image(player.getImgPath(),true);
+        Image enemyImage = new Image(enemy.getImgPath(),true);
 
         enemies_grid.getChildren().add(new ImageView(enemyImage));
         allies_grid.getChildren().add(new ImageView(playerImage));
+
+        agents.add(player);
+        agents.add(enemy);
+        game = new Game(agents);
 
     }
 

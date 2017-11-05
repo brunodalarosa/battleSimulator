@@ -1,7 +1,7 @@
 package BS.old.Battle;
 
+import BS.game.actions.Skill;
 import BS.old.Agents.Agent;
-import BS.game.skillTrees.Skill;
 
 import java.util.List;
 

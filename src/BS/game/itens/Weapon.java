@@ -1,7 +1,7 @@
 package BS.game.itens;
 
-import BS.game.CombatAttributes;
-import BS.game.skillTrees.SkillTree;
+import BS.old.CombatAttributes;
+import BS.old.SkillTree;
 
 /**
  * Weapon is the base class for all the types of weapons (weapons classes)

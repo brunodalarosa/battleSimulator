@@ -1,7 +1,6 @@
-package BS.game.skillTrees;
+package BS.old;
 
 import BS.old.Agents.Agent;
-import BS.BS;
 
 /**
  * Basic attack action is considered a skill

@@ -1,7 +1,7 @@
-package BS.game.skillTrees.Weapons;
+package BS.old.Weapons;
 
 import BS.old.Agents.Agent;
-import BS.game.skillTrees.SkillTree;
+import BS.old.SkillTree;
 
 /**
  * The Sword skill tree (More info on the game design documents)

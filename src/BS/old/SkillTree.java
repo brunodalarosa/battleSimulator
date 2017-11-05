@@ -1,4 +1,4 @@
-package BS.game.skillTrees;
+package BS.old;
 
 /**
  * Base SKillTree class

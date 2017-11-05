@@ -2,31 +2,40 @@ package BS.game.agents;
 
 
 import BS.game.actions.ActionListener;
-import javafx.scene.image.Image;
+import BS.game.actions.Skill;
+
+import java.util.List;
 
 public class Agent {
     private float hp;
     private String name;
     private int lvl;
+    private List<Skill> skills;
     //private CA
     //private PA
     private ActionListener action_listener;
     private String img_path;
 
     public Agent(float hp, String name, int lvl, String img_path,
-                 ActionListener action_listener) {
+                 ActionListener action_listener, List<Skill> skills) {
         this.hp = hp;
         this.name = name;
         this.lvl = lvl;
+        this.skills = skills;
         this.img_path = img_path;
         this.action_listener = action_listener;
     }
 
-    public String getImg_path() {
+    public float receiveDamage(float damage){
+        hp = hp - damage;
+        return hp;
+    }
+
+    public String getImgPath() {
         return img_path;
     }
 
-    public void setImg_path(String img_path) {
+    public void setImgPath(String img_path) {
         this.img_path = img_path;
     }
 
@@ -52,6 +61,14 @@ public class Agent {
 
     public void setLvl(int lvl) {
         this.lvl = lvl;
+    }
+
+    public List<Skill> getSkills() {
+        return skills;
+    }
+
+    public void setSkills(List<Skill> skills) {
+        this.skills = skills;
     }
 
     public ActionListener getActionListener() {

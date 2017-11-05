@@ -1,6 +1,4 @@
-package BS.game;
-
-import BS.BS;
+package BS.old;
 
 /**
  * This class represents the combat attributes that every Agent, Equipment and Weapon have
