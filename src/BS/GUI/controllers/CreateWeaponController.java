@@ -1,4 +1,4 @@
-package BS.GUI.Controllers;
+package BS.GUI.controllers;
 
 import BS.game.itens.Weapon;
 import FXController.BaseController;

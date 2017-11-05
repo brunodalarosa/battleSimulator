@@ -38,16 +38,7 @@ public class GUIController {
         StagesController.getInstance().addScreenController("main", main_controller);
 
         main_controller.loadScreen("main",
-                GUIController.class.getResource("/fxmls/main.fxml"));
-        main_controller.loadScreen("weapons",
-                GUIController.class.getResource("/fxmls/weapons.fxml"));
-        main_controller.loadScreen("create_weapon",
-                GUIController.class.getResource("/fxmls/create_weapon.fxml"));
-        main_controller.loadScreen("bestiary",
-                GUIController.class.getResource("/fxmls/bestiary.fxml"));
-        main_controller.loadScreen("characters",
-                GUIController.class.getResource("/fxmls/characters.fxml"));
-
+                GUIController.class.getResource("/fxmls/battle.fxml"));
 
         main_controller.setInitialScreen("main");
     }

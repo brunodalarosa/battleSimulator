@@ -31,7 +31,6 @@ public class CombatAttributes {
     private float bonus_mp_regen;
     private float bonus_hp_regen;
 
-
     //Resistances
     private float res_fire;
     private float res_ice;

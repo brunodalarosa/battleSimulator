@@ -9,7 +9,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox fx:id="main_pane_" alignment="BOTTOM_CENTER" maxHeight="1000.0" maxWidth="600.0" minHeight="400.0" minWidth="200.0" prefHeight="800.0" prefWidth="400.0" style="-fx-background-color: snow;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="BS.GUI.Controllers.MainController">
+<VBox fx:id="main_pane_" alignment="BOTTOM_CENTER" maxHeight="1000.0" maxWidth="600.0" minHeight="400.0" minWidth="200.0" prefHeight="800.0" prefWidth="400.0" style="-fx-background-color: snow;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="BS.GUI.controllers.MainController">
    <children>
       <JFXButton buttonType="RAISED" onAction="#battle" prefHeight="100.0" prefWidth="380.0" ripplerFill="#3fd943" style="-fx-background-color: lightgreen;" text="Simulate Battle" textAlignment="CENTER" wrapText="true" VBox.vgrow="ALWAYS">
          <VBox.margin>

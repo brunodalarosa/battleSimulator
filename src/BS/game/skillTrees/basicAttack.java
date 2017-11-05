@@ -8,7 +8,7 @@ import BS.BS;
  * @author Bruno Cesar
  * @since 25/10/2017
  */
-public class basicAttack extends Skill {
+public class basicAttack{
 
     /**
      * Calculate and apply a basic attack (Physical)
@@ -16,7 +16,7 @@ public class basicAttack extends Skill {
      * @param target The target of the attack
      */
     public basicAttack(Agent source, Agent target){
-        super(source);
+    /*    super(source);
         //TODO Encontrar uma boa formula de cálculo para ataque fisico e modificar esta função implementando ela.
         boolean hit = BS.getInstance().getSkillUtils().hit(source.getAttributes().getAcc(),target.getAttributes().getEva());
 
@@ -34,6 +34,6 @@ public class basicAttack extends Skill {
         } else{
             //TODO log miss
             //TODO display miss
-        }
+        }*/
     }
 }

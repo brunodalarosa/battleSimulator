@@ -1,4 +1,4 @@
-package BS.GUI.Controllers;
+package BS.GUI.controllers;
 
 import BS.BS;
 import FXController.BaseController;
