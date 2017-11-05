@@ -17,9 +17,8 @@ public class ControlledActionListener implements ActionListener {
 
     @Override
     public Skill getAction() {
-        if(controlled == null) System.out.printf("nao tem controlled");
-        if(controlled.getSkills() == null) System.out.println("nao tem skills");
         int i = new Random().nextInt(controlled.getSkills().size());
+
         controlled.getSkills().get(i).setTarget(player);
         return controlled.getSkills().get(i);
     }

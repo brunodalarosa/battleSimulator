@@ -8,7 +8,7 @@ public class BasicAttack extends Skill {
 
     public BasicAttack(Agent source) {
         super(source,"Basic Attack");
-        damage = 1.5f;
+        damage = 0.1f;
     }
 
     @Override

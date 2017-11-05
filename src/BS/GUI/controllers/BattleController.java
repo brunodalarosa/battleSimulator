@@ -13,8 +13,6 @@ import FXController.BaseController;
 import FXController.ScreenController;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
@@ -88,7 +86,6 @@ public class BattleController implements BaseController {
     public void init() {
         //Teste basico
 
-        cbox_target.getItems().addAll(enemy);
         cbox_target.setOnAction(event -> target = cbox_target.getValue());
 
         agents = new ArrayList<>();
@@ -112,6 +109,9 @@ public class BattleController implements BaseController {
 
         enemies_grid.getChildren().add(new ImageView(enemyImage));
         allies_grid.getChildren().add(new ImageView(playerImage));
+        cbox_target.getItems().addAll(enemy);
+
+
 
         agents.add(player);
         agents.add(enemy);

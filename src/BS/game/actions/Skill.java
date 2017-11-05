@@ -42,7 +42,6 @@ public abstract class Skill{
         this.target = target;
     }
     public void setTarget(Agent target) {
-        System.out.println(target);
         this.target = new ArrayList<>();
         this.target.add(target);
     }
