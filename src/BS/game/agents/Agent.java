@@ -2,6 +2,7 @@ package BS.game.agents;
 
 
 import BS.game.actions.ActionListener;
+import javafx.scene.image.Image;
 
 public class Agent {
     private float hp;
@@ -10,13 +11,23 @@ public class Agent {
     //private CA
     //private PA
     private ActionListener action_listener;
-    //private img
+    private String img_path;
 
-    public Agent(float hp, String name, int lvl, ActionListener action_listener) {
+    public Agent(float hp, String name, int lvl, String img_path,
+                 ActionListener action_listener) {
         this.hp = hp;
         this.name = name;
         this.lvl = lvl;
+        this.img_path = img_path;
         this.action_listener = action_listener;
+    }
+
+    public String getImg_path() {
+        return img_path;
+    }
+
+    public void setImg_path(String img_path) {
+        this.img_path = img_path;
     }
 
     public float getHp() {
