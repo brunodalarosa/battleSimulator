@@ -1,6 +1,6 @@
 package BS.game.itens;
 
-import BS.old.CombatAttributes;
+import BS.game.agents.CombatAttributes;
 
 /**
  * Equipment class

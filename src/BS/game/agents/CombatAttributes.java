@@ -1,4 +1,4 @@
-package BS.old;
+package BS.game.agents;
 
 /**
  * This class represents the combat attributes that every Agent, Equipment and Weapon have
@@ -10,7 +10,46 @@ public class CombatAttributes {
 
     /* Empty constructor */
     public CombatAttributes() {
+        this.bonus_fire = 1;
+        this.bonus_ice = 1;
+        this.bonus_eletric = 1;
+        this.bonus_wind = 1;
+        this.bonus_poison = 1;
+        this.bonus_acid = 1;
+        this.bonus_dark = 1;
+        this.bonus_heal = 1;
+        this.bonus_heal_absorb = 1;
+        this.bonus_pierce = 1;
+        this.bonus_slash = 1;
+        this.bonus_bash = 1;
+        this.bonus_mp_regen = 0;
+        this.bonus_hp_regen = 0;
 
+       this.res_fire = 0;
+       this.res_ice = 0;
+       this.res_eletric = 0;
+       this.res_wind = 0;
+       this.res_poison = 0;
+       this.res_acid = 0;
+       this.res_dark = 0;
+       this.res_sleep = 0;
+       this.res_mute = 0;
+       this.res_bash = 0;
+       this.res_slash = 0;
+       this.block_chance = 0;
+
+       this.HP = 1;
+       this.MP = 1;
+       this.WP = 1;
+       this.spd = 1;
+       this.atk = 1;
+       this.def = 1;
+       this.m_atk = 1;
+       this.m_def = 1;
+       this.acc = 1;
+       this.eva = 1;
+       this.not = 1;
+       this.crit = 1;
     }
 
     //Bonuses
@@ -39,12 +78,14 @@ public class CombatAttributes {
     private float res_dark;
     private float res_sleep;
     private float res_mute;
+    private float res_slash; //TODO adicionar na UI
+    private float res_bash; //TODO adicionar na UI
     private float block_chance;
 
     //Main atributes
     private float HP; //Health Points
-    private int MP; //Magic Points
-    private int WP; //Will Points
+    private float MP; //Magic Points
+    private float WP; //Will Points
     private float spd; //Speed
     private float atk; //Attack
     private float def; //Defense
@@ -255,19 +296,19 @@ public class CombatAttributes {
         this.HP = HP;
     }
 
-    public int getMP() {
+    public float getMP() {
         return MP;
     }
 
-    public void setMP(int MP) {
+    public void setMP(float MP) {
         this.MP = MP;
     }
 
-    public int getWP() {
+    public float getWP() {
         return WP;
     }
 
-    public void setWP(int WP) {
+    public void setWP(float WP) {
         this.WP = WP;
     }
 

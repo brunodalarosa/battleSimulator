@@ -8,14 +8,14 @@ public class BasicAttack extends Skill {
 
     public BasicAttack(Agent source) {
         super(source,"Basic Attack");
-        damage = 0.1f;
+        damage = source.getCA().getAtk();
     }
 
     @Override
     public void execute() {
         for(Agent a : target){
             a.receiveDamage(damage);
-            System.out.println("oi mamae basic");
+            System.out.println(source.getName() + "used" + this.name + " on " + a.getName());
         }
     }
 }

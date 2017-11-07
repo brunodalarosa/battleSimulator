@@ -1,6 +1,6 @@
 package BS.old.Agents;
 
-import BS.old.CombatAttributes;
+import BS.game.agents.CombatAttributes;
 
 /**
  * Um Agent é a classe base para todos e qualquer alvo em batalhas, incluindo jogador, personagens e inimigos.

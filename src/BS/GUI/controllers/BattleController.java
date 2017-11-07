@@ -90,9 +90,9 @@ public class BattleController implements BaseController {
 
         agents = new ArrayList<>();
 
-
         player = new Agent(10, "Paula",1, "/sprites/humans/spr_f_traveler_idle_anim.gif",
                 player_skills);
+
         actionListener = new PlayerActionListener(player);
         player.setActionListener(actionListener);
 

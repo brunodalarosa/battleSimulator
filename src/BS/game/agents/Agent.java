@@ -11,8 +11,8 @@ public class Agent {
     private String name;
     private int lvl;
     private List<Skill> skills;
-    //private CA
-    //private PA
+    private CombatAttributes CA;
+    private BasicAttributes BA;
     private ActionListener action_listener;
     private String img_path;
 
@@ -22,6 +22,9 @@ public class Agent {
         this.lvl = lvl;
         this.skills = skills;
         this.img_path = img_path;
+
+        this.CA = new CombatAttributes();
+        this.BA = new BasicAttributes();
     }
 
     public float receiveDamage(float damage){
@@ -79,5 +82,21 @@ public class Agent {
 
     public void setActionListener(ActionListener action_listener) {
         this.action_listener = action_listener;
+    }
+
+    public CombatAttributes getCA() {
+        return CA;
+    }
+
+    public void setCA(CombatAttributes CA) {
+        this.CA = CA;
+    }
+
+    public BasicAttributes getBA() {
+        return BA;
+    }
+
+    public void setBA(BasicAttributes BA) {
+        this.BA = BA;
     }
 }
