@@ -13,9 +13,9 @@ public class BasicAttack extends Skill {
 
     @Override
     public void execute() {
-        for(Agent a : target){
-            a.receiveDamage(damage);
-            System.out.println(source.getName() + "used" + this.name + " on " + a.getName());
-        }
+        Agent t = target.get(0);
+        display(t);
+        t.receiveDamage(damage);
+
     }
 }

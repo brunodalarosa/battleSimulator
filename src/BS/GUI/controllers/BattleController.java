@@ -7,6 +7,7 @@ import BS.game.actions.actionListeners.ControlledActionListener;
 import BS.game.actions.actionListeners.PlayerActionListener;
 import BS.game.actions.skills.BasicAttack;
 import BS.game.actions.skills.StrongAttack;
+import BS.game.actions.skills.VerticalSlash;
 import BS.game.actions.skills.WeakAttack;
 import BS.game.agents.Agent;
 import FXController.BaseController;
@@ -34,6 +35,7 @@ public class BattleController implements BaseController {
     public JFXButton cancel;
     public JFXComboBox<Agent> cbox_target;
     public Agent target;
+    public List<JFXButton> skill_btns = new ArrayList<>();
 
 
     //Teste
@@ -78,6 +80,8 @@ public class BattleController implements BaseController {
             });
             btn_skill.setFont(new Font(24));
             hbox_skills.getChildren().add(btn_skill);
+            btn_skill.setDisable(true);
+            skill_btns.add(btn_skill);
         }
 
     }
@@ -86,7 +90,12 @@ public class BattleController implements BaseController {
     public void init() {
         //Teste basico
 
-        cbox_target.setOnAction(event -> target = cbox_target.getValue());
+        cbox_target.setOnAction(event -> {
+            target = cbox_target.getValue();
+            for (JFXButton btn: skill_btns) {
+                btn.setDisable(false);
+            }
+        });
 
         agents = new ArrayList<>();
 
@@ -104,6 +113,7 @@ public class BattleController implements BaseController {
         Image enemyImage = new Image(enemy.getImgPath(),true);
 
         player_skills.add(new BasicAttack(player));
+        player_skills.add(new VerticalSlash(player,1));
         enemy_skills.add(new WeakAttack(enemy));
         enemy_skills.add(new StrongAttack(enemy));
 

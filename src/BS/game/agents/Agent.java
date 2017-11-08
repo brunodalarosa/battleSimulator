@@ -28,6 +28,7 @@ public class Agent {
     }
 
     public float receiveDamage(float damage){
+        System.out.println(this.name + " took " + damage + " damage!\n"); //todo trocar por display
         hp = hp - damage;
         return hp;
     }

@@ -20,6 +20,25 @@ public abstract class Skill{
         this.name = name;
     }
 
+    /**
+     * Display the skill for multi-target
+     */
+    protected void display(){
+        System.out.print(source.getName() + " used " + this.name + " on ");
+        for (Agent t: target) {
+            System.out.print(t.getName() + " ");
+        }
+        System.out.println();
+    }
+
+
+    /**
+     * Display the skill for single-target
+     */
+    protected void display(Agent target){
+        System.out.println(source.getName() + " used " + this.name + " on " + target.getName());
+    }
+
     public abstract void execute();
 
     public Agent getSource() {

@@ -28,6 +28,8 @@ public class Game {
             skill.execute();
         }
 
+        actions.clear();
         agents.sort(comparator);
+        System.out.println("\n--- END OF TURN ---\n");
     }
 }

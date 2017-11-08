@@ -13,9 +13,9 @@ public class WeakAttack extends Skill{
 
     @Override
     public void execute() {
+        display();
         for(Agent a : target){
             a.receiveDamage(damage);
-            System.out.println("weak move");
         }
     }
 }

@@ -13,9 +13,9 @@ public class StrongAttack extends Skill {
 
     @Override
     public void execute() {
+        display();
         for(Agent a : target){
             a.receiveDamage(damage);
-            System.out.println("Strong bitch");
         }
     }
 }

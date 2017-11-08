@@ -20,10 +20,14 @@ public class VerticalSlash extends Skill {
 
     @Override
     public void execute() {
+        Agent t = target.get(0);
+
+        display(t);
+
         if(0.01 * lvl > Math.random()){ //de 1% a 5% de chance de causar confusao
             //TODO aplicar confusao no target
         }
 
-        target.get(0).receiveDamage(dmg);
+        t.receiveDamage(dmg);
     }
 }
