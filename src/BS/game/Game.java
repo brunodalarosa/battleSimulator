@@ -1,5 +1,6 @@
 package BS.game;
 
+import BS.GUI.controllers.BattleController;
 import BS.game.actions.Skill;
 import BS.game.agents.Agent;
 
@@ -10,7 +11,7 @@ public class Game {
     private List<Agent> agents;
     private Queue<Skill> actions;
 
-    private Comparator<Agent> comparator = (o1, o2) -> (int) (o1.getHp() - o2.getHp());
+    private Comparator<Agent> comparator = (o1, o2) -> (int) (o1.getMax_hp() - o2.getMax_hp());
 
 
     public Game(List<Agent> agents) {

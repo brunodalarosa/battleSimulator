@@ -7,6 +7,7 @@ import BS.game.actions.Skill;
 import java.util.List;
 
 public class Agent {
+    private float max_hp;
     private float hp;
     private String name;
     private int lvl;
@@ -16,8 +17,9 @@ public class Agent {
     private ActionListener action_listener;
     private String img_path;
 
-    public Agent(float hp, String name, int lvl, String img_path, List<Skill> skills) {
-        this.hp = hp;
+    public Agent(float max_hp, String name, int lvl, String img_path, List<Skill> skills) {
+        this.max_hp = max_hp;
+        this.hp = max_hp;
         this.name = name;
         this.lvl = lvl;
         this.skills = skills;
@@ -33,6 +35,14 @@ public class Agent {
         return hp;
     }
 
+    public float getHp() {
+        return hp;
+    }
+
+    public void setHp(float hp) {
+        this.hp = hp;
+    }
+
     public String getImgPath() {
         return img_path;
     }
@@ -41,12 +51,12 @@ public class Agent {
         this.img_path = img_path;
     }
 
-    public float getHp() {
-        return hp;
+    public float getMax_hp() {
+        return max_hp;
     }
 
-    public void setHp(float hp) {
-        this.hp = hp;
+    public void setMax_hp(float max_hp) {
+        this.max_hp = max_hp;
     }
 
     public String getName() {
