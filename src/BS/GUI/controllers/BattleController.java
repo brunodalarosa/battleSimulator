@@ -3,20 +3,14 @@ package BS.GUI.controllers;
 import BS.BS;
 import BS.GUI.components.AgentModel;
 import BS.game.Game;
-import BS.game.actions.Skill;
+import BS.game.actions.skills.*;
 import BS.game.actions.actionListeners.ControlledActionListener;
 import BS.game.actions.actionListeners.PlayerActionListener;
-import BS.game.actions.skills.BasicAttack;
-import BS.game.actions.skills.StrongAttack;
-import BS.game.actions.skills.VerticalSlash;
-import BS.game.actions.skills.WeakAttack;
 import BS.game.agents.Agent;
 import FXController.BaseController;
 import FXController.ScreenController;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
@@ -106,6 +100,7 @@ public class BattleController implements BaseController {
 
         player_skills.add(new BasicAttack(player));
         player_skills.add(new VerticalSlash(player,1));
+        player_skills.add(new BattleCry(player,10,3));
         enemy_skills.add(new WeakAttack(enemy));
         enemy_skills.add(new StrongAttack(enemy));
 

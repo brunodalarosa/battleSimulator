@@ -1,7 +1,6 @@
 package BS.game.actions.actionListeners;
 
-import BS.game.actions.ActionListener;
-import BS.game.actions.Skill;
+import BS.game.actions.skills.Skill;
 import BS.game.agents.Agent;
 
 public class PlayerActionListener implements ActionListener {

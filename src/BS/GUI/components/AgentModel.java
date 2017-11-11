@@ -45,7 +45,7 @@ public class AgentModel extends GridPane {
 
     public AgentModel(Agent agent) {
         this.agent = agent;
-        agent_sprite = new ImageView(agent.getImgPath());
+        agent_sprite = new ImageView(agent.getImg_path());
         lbl_name = new Label(agent.getName());
         lbl_HP = new Label(agent.getHp() + "/" + agent.getMax_hp() +" HP");
         HP_bar = new ProgressBar(1); //Full Bar

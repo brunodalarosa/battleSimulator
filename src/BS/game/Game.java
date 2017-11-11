@@ -1,8 +1,8 @@
 package BS.game;
 
-import BS.GUI.controllers.BattleController;
-import BS.game.actions.Skill;
+import BS.game.actions.skills.Skill;
 import BS.game.agents.Agent;
+import BS.game.buffs.Buff;
 
 import java.util.*;
 import java.util.concurrent.LinkedBlockingQueue;
@@ -31,6 +31,21 @@ public class Game {
 
         actions.clear();
         agents.sort(comparator);
+        refreshBuffs();
+
         System.out.println("\n--- END OF TURN ---\n");
+    }
+
+    /**
+     * Decrease turns of every buff of every agent in battle
+     */
+    public void refreshBuffs(){
+        for (Agent a : agents) {
+            for (Buff b: a.getBuffs()) {
+                b.decreaseDuration();
+            }
+
+        }
+
     }
 }

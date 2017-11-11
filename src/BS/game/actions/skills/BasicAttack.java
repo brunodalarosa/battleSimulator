@@ -1,6 +1,5 @@
 package BS.game.actions.skills;
 
-import BS.game.actions.Skill;
 import BS.game.agents.Agent;
 
 public class BasicAttack extends Skill {
@@ -16,6 +15,5 @@ public class BasicAttack extends Skill {
         Agent t = target.get(0);
         display(t);
         t.receiveDamage(damage);
-
     }
 }

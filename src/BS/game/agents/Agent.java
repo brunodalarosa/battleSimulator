@@ -1,9 +1,12 @@
 package BS.game.agents;
 
 
-import BS.game.actions.ActionListener;
-import BS.game.actions.Skill;
+import BS.game.actions.actionListeners.ActionListener;
+import BS.game.actions.skills.Skill;
+import BS.game.buffs.Buff;
+import BS.game.passives.PassiveEffect;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Agent {
@@ -12,6 +15,8 @@ public class Agent {
     private String name;
     private int lvl;
     private List<Skill> skills;
+    private List<PassiveEffect> passives;
+    private List<Buff> buffs;
     private CombatAttributes CA;
     private BasicAttributes BA;
     private ActionListener action_listener;
@@ -27,12 +32,42 @@ public class Agent {
 
         this.CA = new CombatAttributes();
         this.BA = new BasicAttributes();
+        this.passives = new ArrayList<>();
+        this.buffs = new ArrayList<>();
     }
 
     public float receiveDamage(float damage){
         System.out.println(this.name + " took " + damage + " damage!\n"); //todo trocar por display
         hp = hp - damage;
         return hp;
+    }
+
+
+    public List<PassiveEffect> getPassives() {
+        return passives;
+    }
+
+    public List<Buff> getBuffs() {
+        return buffs;
+    }
+
+    public void addPassive(PassiveEffect p){
+        p.applyEffect();
+        passives.add(p);
+    }
+
+    public void removePassive(PassiveEffect p){
+        passives.remove(p);
+    }
+
+    public void addBuff(Buff b){
+        b.applyEffect();
+        buffs.add(b);
+    }
+
+    public void removeBuff(Buff b){
+        b.removeEffect();
+        buffs.remove(b);
     }
 
     public float getHp() {
@@ -43,7 +78,7 @@ public class Agent {
         this.hp = hp;
     }
 
-    public String getImgPath() {
+    public String getImg_path() {
         return img_path;
     }
 

@@ -1,6 +1,5 @@
 package BS.game.actions.skills;
 
-import BS.game.actions.Skill;
 import BS.game.agents.Agent;
 
 public class WeakAttack extends Skill{

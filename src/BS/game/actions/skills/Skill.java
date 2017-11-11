@@ -1,4 +1,4 @@
-package BS.game.actions;
+package BS.game.actions.skills;
 
 import BS.game.agents.Agent;
 
@@ -14,10 +14,23 @@ public abstract class Skill{
     protected Agent source;
     protected List<Agent> target;
     protected String name;
+    protected float mp_cost;
 
+    /**
+     * No mana cost constructor
+     */
     public Skill(Agent source, String name) {
         this.source = source;
         this.name = name;
+    }
+
+    /**
+     * Full constructor
+     */
+    public Skill(Agent source, String name, float mp_cost) {
+        this.source = source;
+        this.name = name;
+        this.mp_cost = mp_cost;
     }
 
     /**

@@ -24,6 +24,7 @@ public class CombatAttributes {
         this.bonus_bash = 1;
         this.bonus_mp_regen = 0;
         this.bonus_hp_regen = 0;
+        this.counter_chance = 0;
 
        this.res_fire = 0;
        this.res_ice = 0;
@@ -67,6 +68,7 @@ public class CombatAttributes {
     private float bonus_bash;
     private float bonus_mp_regen;
     private float bonus_hp_regen;
+    private float counter_chance; //TODO adicionar na UI
 
     //Resistances
     private float res_fire;
@@ -95,6 +97,32 @@ public class CombatAttributes {
     private float eva; //Evasion
     private float not; //Notoriety
     private float crit; //Critical Attack chance
+
+
+
+    public float getCounter_chance() {
+        return counter_chance;
+    }
+
+    public void setCounter_chance(float counter_chance) {
+        this.counter_chance = counter_chance;
+    }
+
+    public float getRes_slash() {
+        return res_slash;
+    }
+
+    public void setRes_slash(float res_slash) {
+        this.res_slash = res_slash;
+    }
+
+    public float getRes_bash() {
+        return res_bash;
+    }
+
+    public void setRes_bash(float res_bash) {
+        this.res_bash = res_bash;
+    }
 
     public float getBonus_fire() {
         return bonus_fire;
